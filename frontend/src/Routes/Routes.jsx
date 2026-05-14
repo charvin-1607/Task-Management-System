@@ -24,6 +24,7 @@ import Profile from "../pages/CommonFiles/Profile";
 import ForgotPassword from "../components/Forget_&_ResetPassword/ForgotPassword";
 import ResetPassword from "../components/Forget_&_ResetPassword/ResetPassword";
 import ChangePassword from "../pages/CommonFiles/ChangePassword";
+import LandingPage from "../pages/CommonFiles/LandingPage";
 
 
 
@@ -34,7 +35,7 @@ import ChangePassword from "../pages/CommonFiles/ChangePassword";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Signup />,
+    element: <LandingPage />,
   },
   {
     path: "/signup",
