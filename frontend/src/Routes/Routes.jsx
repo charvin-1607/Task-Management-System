@@ -25,6 +25,7 @@ import ForgotPassword from "../components/Forget_&_ResetPassword/ForgotPassword"
 import ResetPassword from "../components/Forget_&_ResetPassword/ResetPassword";
 import ChangePassword from "../pages/CommonFiles/ChangePassword";
 import LandingPage from "../pages/CommonFiles/LandingPage";
+import Logs from "../pages/CommonFiles/Logs";
 
 
 
@@ -93,6 +94,17 @@ const router = createBrowserRouter([
 
   },
 
+  {
+    path:"/admin/logs",
+    element:(
+      <ProtectedRoute allowedRoles={["admin"]}>
+        <Layout>
+            <Logs />
+        </Layout>
+      </ProtectedRoute>
+    )
+  },
+
 
 
 
@@ -129,6 +141,18 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     )
 
+  },
+
+
+  {
+    path:"/manager/logs",
+    element:(
+      <ProtectedRoute allowedRoles={["manager"]}>
+        <Layout>
+            <Logs />
+        </Layout>
+      </ProtectedRoute>
+    )
   },
 
 
@@ -181,6 +205,17 @@ const router = createBrowserRouter([
 
   },
 
+  {
+    path:"/tl/logs",
+    element:(
+      <ProtectedRoute allowedRoles={["tl"]}>
+        <Layout>
+            <Logs />
+        </Layout>
+      </ProtectedRoute>
+    )
+  },
+
 
   // Employee
   {
@@ -217,6 +252,7 @@ const router = createBrowserRouter([
 
   },
 
+  
 
 
   {

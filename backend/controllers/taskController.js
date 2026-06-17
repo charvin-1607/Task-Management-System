@@ -379,7 +379,8 @@ exports.getLogs = async (req, res) => {
 
     const logs = await ActivityLog.find()
       .populate("employee_id", "name email role")
-      .populate("task_id", "title");
+      .populate("task_id", "title")
+      .sort({ createdAt: -1 });
 
 
 

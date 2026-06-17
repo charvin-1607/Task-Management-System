@@ -188,3 +188,26 @@ export const getTLTaskStatsAPI = async () => {
     return { success: false, message: "Error fetching TL stats" };
   }
 };
+
+// task logs
+export const getLogsAPI = async () => {
+  try {
+    const res = await fetch(
+      "http://localhost:8005/api/tasks/logs",
+      {
+        credentials: "include",
+      }
+    );
+
+    const data = await res.json();
+
+    return data;
+
+  } catch (error) {
+    console.error("Error fetching logs:", error);
+
+    throw new Error(
+      error.message || "Failed to fetch logs"
+    );
+  }
+};

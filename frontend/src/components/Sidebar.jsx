@@ -52,6 +52,12 @@ function Sidebar() {
                 📋 <span className="ms-2">Tasks</span>
               </NavLink>
             </li>
+
+            <li>
+              <NavLink to="/admin/logs" className={linkClass}>
+                📝 <span className="ms-2">Logs</span>
+              </NavLink>
+            </li>
           </>
         )}
 
@@ -75,6 +81,13 @@ function Sidebar() {
                 🧑‍💼 <span className="ms-2">Assign TL</span>
               </NavLink>
             </li>
+
+            <li>
+              <NavLink to="/manager/logs" className={linkClass}>
+                📝 <span className="ms-2">Logs</span>
+              </NavLink>
+            </li>
+
           </>
         )}
 
@@ -103,6 +116,13 @@ function Sidebar() {
                 👨‍👩‍👧 <span className="ms-2">My Team</span>
               </NavLink>
             </li>
+
+            <li>
+              <NavLink to="/tl/logs" className={linkClass}>
+                📝 <span className="ms-2">Logs</span>
+              </NavLink>
+            </li>
+            
           </>
         )}
 

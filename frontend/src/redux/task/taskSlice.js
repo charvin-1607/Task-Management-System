@@ -119,6 +119,16 @@ const taskSlice = createSlice({
     },
 
 
+    // logs
+    fetchLogsRequest: {
+      loading: false,
+      success: false,
+      error: null,
+      message: "",
+    },
+    
+    logs: [],
+
 
   },
 
@@ -397,6 +407,29 @@ const taskSlice = createSlice({
         state.fetchTLTeamSizeRequest.error = action.payload;
       },
 
+
+      //logs
+
+      fetchLogsStart: (state) => {
+        state.fetchLogsRequest.loading = true;
+        state.fetchLogsRequest.error = null;
+      },
+      
+      fetchLogsSuccess: (state, action) => {
+        state.fetchLogsRequest.loading = false;
+        state.fetchLogsRequest.success = true;
+      
+        state.logs = action.payload.logs || [];
+      
+        state.fetchLogsRequest.message =
+          action.payload.message;
+      },
+      
+      fetchLogsFail: (state, action) => {
+        state.fetchLogsRequest.loading = false;
+        state.fetchLogsRequest.error = action.payload;
+      },
+
   },
 
 });
@@ -441,6 +474,10 @@ export const {
   fetchTLTeamSizeStart,
   fetchTLTeamSizeSuccess,
   fetchTLTeamSizeFail,
+
+  fetchLogsStart,
+  fetchLogsSuccess,
+  fetchLogsFail,
   
 } = taskSlice.actions;
 
