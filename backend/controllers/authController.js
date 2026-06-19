@@ -2,7 +2,7 @@ const Employee = require("../models/employeeModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const sendEmail = require("../utils/sendEmail");
-
+const logActivity = require("../utils/logActivity");
 
 // SIGNUP
 exports.signup = async (req, res) => {
@@ -97,6 +97,10 @@ exports.login = async (req, res) => {
     //   `Hello ${user.name},you are login on our website ,login detected at ${time}`
     // );
 
+
+    // Log activity (no await = fast response)
+      await logActivity(user._id, "Logged in");
+
   } catch (error) {
     res.status(500).json({ success: false, message: "Server error" });
   }
@@ -117,6 +121,10 @@ exports.logout = async (req, res) => {
     //   "Logout Alert",
     //   `Hello ${user.name}, you have successfully logged out.logout detected at ${time}`
     // );
+
+
+    // 📝 Log activity 
+     logActivity(user.id, "Logged out");
 
     // 🍪 clear cookie
     res.clearCookie("token", {

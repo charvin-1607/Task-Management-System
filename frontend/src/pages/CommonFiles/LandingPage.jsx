@@ -47,7 +47,7 @@ const LandingPage = () => {
 
           <h1 className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent cursor-pointer">
 
-            TaskFlow
+            TaskPilot
 
           </h1>
 
@@ -144,7 +144,7 @@ const LandingPage = () => {
               className="
               px-8 py-4
               rounded-2xl
-              bg-gradient-to-r from-cyan-500 to-violet-500
+              bg-gradient-to-r from-cyan-400 to-violet-500
               hover:scale-105
               transition-all duration-300
               text-lg
